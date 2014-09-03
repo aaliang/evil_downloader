@@ -27,6 +27,7 @@ function getTweetsv2 (queryString, count, callback) {
 
   var searchCallback = function (err, data, resp) {
     if (err) {
+      console.error(err);
       callback(resultsSet);
     }
     if (data.search_metadata && data.statuses.length > 0) {
