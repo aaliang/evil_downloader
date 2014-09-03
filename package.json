@@ -1,0 +1,15 @@
+{
+  "name": "evil downloader",
+  "description": "evil",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "tumblr": "*",
+    "async": "*",
+    "request": "*",
+    "instagram-node": "*",
+    "path": "*",
+    "querystring": "*",
+    "node-twitter-api": "*"
+  }
+}
