@@ -112,7 +112,7 @@ download_blog_photos(blogname, 400, function (r) {
 
 });
 
-//var dir = 'yd';
-//  search('young-dommes', 100, function (d) {
+//var dir = 'late walker';
+//  search('late-walker', 100, function (d) {
 //});
 
