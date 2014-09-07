@@ -19,10 +19,7 @@ var q = async.queue(function (task, callback) {
 
 var download = function(uri, callback){
   var filename = dir + '/'+ path.basename(uri);
-//  if (filename == 'per/tumblr_mhs5ugTtW61rgh13wo1_1280.jpg'){
-//    var d = 3;
-//  }
-//  callback();
+
   request.head(uri, function(err, res, body){
     request(uri).pipe(fs.createWriteStream(filename)).on('close', function () {
 //      console.log(filename);
@@ -40,9 +37,6 @@ var search = function (query, number, callback) {
       var img_uris = r.reduce(function (p, c) {
         if (c.photos && c.photos.length > 0) {
           c.photos.forEach(function (d) {
-//            if (d.original_size.url == 'http://31.media.tumblr.com/d616311711bbd6bad256622d48ee8e79/tumblr_mhs5ugTtW61rgh13wo1_1280.jpg' || d.original_size.url == 'tumblr_mhs5ugTtW61rgh13wo1_1280.jpg'){
-//              var dc = c;
-//            }
             console.log(d.original_size.url + ' -> ' + c.post_url);
             p.push(d.original_size.url)
           });
@@ -66,10 +60,7 @@ var search = function (query, number, callback) {
 
   t.search(query, search_cb);
 };
-//
-//var dir = 'yd';
-//  search('young-dommes', 100, function (d) {
-//});
+
 
 var download_blog_photos = function (blogname, number, callback) {
   var blog = new tumblr.Blog(blogname, oauth);
@@ -120,5 +111,8 @@ var dir = process.argv[3];
 download_blog_photos(blogname, 400, function (r) {
 
 });
-//
-//var x =3;
+
+//var dir = 'yd';
+//  search('young-dommes', 100, function (d) {
+//});
+
